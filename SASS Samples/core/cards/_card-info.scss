@@ -1,0 +1,51 @@
+/**
+ * Info card
+ *
+ *   - User registration confirmation
+ */
+
+.card-info {
+	width: 100%;
+	@include rem(max-width, 370px);
+	margin: 0 auto;
+    @include rem(padding-bottom, 32px);
+	
+	.header {
+		color: #555555;
+		@include rem(font-size, 23px);
+		font-weight: 400;
+		text-align: center;
+        @include rem(padding, 24px 14px 22px 14px);
+	}
+
+    .wrap {
+		@include rem(padding, 0px 10px);
+	}
+    
+    .info-wrap {
+        @include rem(padding, 0px 21px 14px 21px);
+		background-color: #FFFFFF;
+		border: 1px solid $border-color-1;
+		border-radius: 4px;
+		@include box-shadow($card-box-shadow-1);
+	}
+
+    .sub-header {
+        color: #555555;
+        @include rem(font-size, 21px);
+        font-weight: 400;
+        @include rem(padding, 17px 0px 11px 0px);
+    }
+    
+    .info-list {
+        list-style-type: disc;
+		@include rem(margin, 0px 13px 0px 25px);
+		
+		li {
+            color: #555555;
+			@include rem(padding-bottom, 10px);
+		}
+
+    }
+	
+}

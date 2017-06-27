@@ -1,0 +1,26 @@
+<div class="page-wrap">
+		
+	<div class="header-logo" role="banner">
+		<a href="/" class="logo"><img src="/assets/images/**********-logo.png" alt="********** Homepage" /></a>
+	</div>
+
+	<main role="main">
+
+		<div ui-view=""></div>
+
+	</main>
+
+</div>
+
+<@dirPrefix@-spinner data-type="fullScreen" data-name="fullScreen" data-toggle-body-scroll="true" data-min-display-time="1500" class="ng-cloak"></@dirPrefix@-spinner>
+
+{{#if ngTemplates}}
+	<!-- Angular templates -->
+	{{#each ngTemplates}}
+		<script type="text/ng-template" id="{{ this.url }}">{{> (lookup . 'partialName') }}</script>
+	{{/each}}
+{{/if}}
+
+<!-- Scripts -->
+<script src="/assets/js/vendors/main.min.js"></script>
+<script src="/site/assets/js/main.min.js"></script>

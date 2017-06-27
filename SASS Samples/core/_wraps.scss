@@ -1,0 +1,8 @@
+/**
+ * Generic wraps
+ */
+
+.page-wrap {
+	@include rem(min-width, 280px);
+	margin: 0 auto;
+}

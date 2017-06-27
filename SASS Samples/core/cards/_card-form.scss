@@ -1,0 +1,108 @@
+/**
+ * Form card
+ */
+
+.card-form {
+	width: 100%;
+	@include rem(max-width, 370px);
+	margin: 0 auto;
+    @include rem(padding-bottom, 32px);
+	
+	.header {
+		color: #555555;
+		@include rem(font-size, 23px);
+		font-weight: 400;
+		text-align: center;
+		@include rem(padding, 24px 14px 22px 14px);
+	}
+	
+	.wrap {
+		@include rem(padding, 0px 10px);
+	}
+
+	.utils-form {
+		background-color: #FFFFFF;
+		border: 1px solid $border-color-1;
+		border-radius: 4px;
+		@include box-shadow($card-box-shadow-1);
+	}
+
+	.input-wrap {
+		@include rem(padding, 7px);
+
+		input {
+			color: #555555;
+			@include rem(font-size, 16px);
+			display: block;
+			width: 100%;
+			@include rem(padding, 7px 10px);
+		}
+
+	}
+
+	.input-wrap,
+	.intro,
+	.error-heading {
+		border-bottom: 1px solid $border-color-1;
+	}
+	
+	.ctrls-wrap {
+		@include rem(padding, 14px 16px);
+	}
+
+	.child-first {
+		border-radius: 4px 4px 0px 0px;
+	}
+	
+	.child-last {
+		border-radius: 0px 0px 4px 4px;
+	}
+	
+	.error-message {
+		color: $form-err-color-1;
+		@include rem(font-size, 14px);
+		@include rem(padding, 4px 11px 11px 7px);
+	}
+	
+	.btn {
+		display: block;
+		width: 100%;
+	}
+
+	.intro,
+	.error-heading,
+	.alt-options,
+	.legal {
+		text-align: center;
+	}
+
+	.intro,
+	.error-heading {
+		@include rem(padding, 19px 25px);
+	}
+
+	.intro {
+		color: #777777;
+	}
+	
+	.error-heading {
+		color: $form-err-color-1;
+	}
+	
+	.alt-options,
+	.legal {
+		color: #888888;
+		@include rem(padding-right, 16px);
+		@include rem(padding-left, 16px);
+	}
+
+	.alt-options {
+		@include rem(padding-top, 18px);
+	}
+
+	.legal {
+		display: block;
+        @include rem(padding-top, 24px);
+	}
+	
+}

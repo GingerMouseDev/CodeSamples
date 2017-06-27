@@ -1,0 +1,65 @@
+/**
+ * Generic buttons
+ */
+
+.btn,
+.btn-reset {
+	font-weight: normal;
+	text-align: center;
+	text-decoration: none;
+	text-indent: 0;
+	white-space: nowrap;
+	vertical-align: middle;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	background: none;
+	background-color: transparent;
+	border: none;
+	border-spacing: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	&:active {
+		outline: 0;
+	}
+
+}
+
+.btn {
+	@include rem(font-size, 16px);
+	font-weight: 700;
+	@include rem(padding, 9px 15px);
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+.btn-primary {
+	@include theme-properties((
+		color: btn-primary-color,
+		background-color: btn-primary-bg-color,
+		border-color: btn-primary-border-color
+	));
+	
+	&:hover {
+		@include theme-properties((background-color: btn-primary-hover-bg-color));
+	}
+
+}
+
+.btn-secondary {
+	@include theme-properties((
+		color: btn-secondary-color,
+		background-color: btn-secondary-bg-color,
+		border-color: btn-secondary-border-color
+	));
+	
+	&:hover {
+		@include theme-properties((background-color: btn-secondary-hover-bg-color));
+	}
+
+}

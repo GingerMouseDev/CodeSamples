@@ -1,0 +1,39 @@
+/**
+ * Material Design Icons
+ *
+ * Ref: https://material.io/icons/
+ * Suggested Sizes: 18px | 24px | 36px | 28px
+ * Usage:
+ *   - <i class="mdi">&#xE313;</i> ()
+ */
+
+@font-face {
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../../../assets/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+	src: local('Material Icons'),
+		local('MaterialIcons-Regular'),
+		url(../../../assets/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+		url(../../../assets/fonts/MaterialIcons-Regular.woff) format('woff'),
+		url(../../../assets/fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.mdi {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	@include rem(font-size, 24px);
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	overflow: hidden;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased; /* Support for all WebKit browsers. */
+	text-rendering: optimizeLegibility; /* Support for Safari and Chrome. */
+	-moz-osx-font-smoothing: grayscale; /* Support for Firefox. */
+	font-feature-settings: 'liga'; /* Support for IE. */
+}

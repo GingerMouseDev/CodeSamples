@@ -1,0 +1,45 @@
+<h1 class="header">Create your free account</h1>
+
+<div class="wrap">
+
+	<form name="$ctrl.registerForm" data-ng-submit="$ctrl.register()" class="utils-form" novalidate="true">
+		
+		<p class="error-heading child-first" data-ng-if="$ctrl.formErrorHeading" data-ng-bind="$ctrl.formErrorHeading"></p>
+		
+		<div class="input-wrap" data-ng-class="{ 'child-first': !$ctrl.formErrorHeading }">
+			<div data-ng-messages="$ctrl.registerForm.name.$error" data-ng-show="($ctrl.registerForm.name.$touched && $ctrl.registerForm.$submitted) || $ctrl.registerForm.$submitted" role="alert" aria-atomic="true">
+				<p data-ng-message="required" class="error-message">{{ config.name.errors.required }}</p>
+				<p data-ng-message="minlength, maxlength" class="error-message">{{ config.name.errors.minMaxLength }}</p>
+			</div>
+			<input type="text" name="name" data-ng-model="$ctrl.name" value="" required="true" minlength="{{ config.name.minLength }}" maxlength="{{ config.name.maxLength }}" placeholder="Name" title="Please enter your name" />
+		</div>
+
+		<div class="input-wrap">
+			<div data-ng-messages="$ctrl.registerForm.email.$error" data-ng-show="($ctrl.registerForm.email.$touched && $ctrl.registerForm.$submitted) || $ctrl.registerForm.$submitted" role="alert" aria-atomic="true">
+				<p data-ng-message="required" class="error-message">{{ config.email.errors.required }}</p>
+				<p data-ng-message="maxlength" class="error-message">{{ config.email.errors.maxLength }}</p>
+				<p data-ng-message="email" class="error-message">{{ config.email.errors.invalid }}</p>
+				<p data-ng-message="duplicate" class="error-message">{{ config.email.errors.duplicate }}</p>
+			</div>
+			<input type="email" name="email" data-ng-model="$ctrl.email" value="" required="true" maxlength="{{ config.email.maxLength }}" data-user-email-duplicate="" placeholder="Email" title="Please enter your email address" />
+		</div>
+		
+		<div class="input-wrap">
+			<div data-ng-messages="$ctrl.registerForm.password.$error" data-ng-show="($ctrl.registerForm.password.$touched && $ctrl.registerForm.$submitted) || $ctrl.registerForm.$submitted" role="alert" aria-atomic="true">
+				<p data-ng-message="required" class="error-message">{{ config.password.errors.required }}</p>
+				<p data-ng-message="minlength, maxlength" class="error-message">{{ config.password.errors.minMaxLength }}</p>
+			</div>
+			<input type="password" name="password" data-ng-model="$ctrl.password" value="" required="true" minlength="{{ config.password.minLength }}" maxlength="{{ config.password.maxLength }}" placeholder="Password" title="Please enter a password" />
+		</div>
+		
+		<div class="ctrls-wrap child-last">
+			<input type="submit" value="Create Account" class="btn btn-primary" />
+		</div>
+		
+	</form>
+
+	<p class="alt-options">Have an account? <a ui-sref="users.login">Sign In</a></p>
+
+	<small class="legal">By signing up, you agree to our <a href="#">Terms</a> &amp; <a href="#">Privacy Policy</a></small>
+
+</div>

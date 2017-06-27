@@ -1,0 +1,149 @@
+/**
+ * Use rem units with pixel fallback
+ *
+ * Origin: https://github.com/pierreburel/sass-rem
+ *
+ * Usage:
+ *   - @include rem(font-size, 24px); - simple
+ *   - @include rem(border-bottom, 1px solid black); - shorthand
+ *   - @include rem(box-shadow, 0 0 2px #ccc, inset 0 0 5px #eee); - multiple values
+ *   - text-shadow: rem(1px 1px #eee, -1px -1px #eee); - function and multiple values, warning: no fallback possible with rem function
+ *   - @include rem((
+ *       margin: 20px 1rem,
+ *       padding: 10px
+ *     ));
+ */
+
+@mixin rem($properties, $values...) {
+
+	@if type-of($properties) == "map" {
+		@each $property in map-keys($properties) {
+			@include rem($property, map-get($properties, $property));
+		}
+	} @else {
+		@each $property in $properties {
+			@if $rem-fallback or $rem-px-only {
+				#{$property}: rem-convert(px, $values...);
+			}
+			@if not $rem-px-only {
+				#{$property}: rem-convert(rem, $values...);
+			}
+		}
+	}
+
+}
+
+/**
+ * Generate styles per given property for each theme within $themes
+ *
+ * Usage:
+ *
+ *   - @include theme-properties((
+ *         background-color: user-toolbar-bg-color
+ *     ));
+ *   - @include theme-properties((
+ *         color: toolbar-color,
+ *         background-color: toolbar-bg-color
+ *     ));
+ */
+
+@mixin theme-properties($properties) {
+
+	@each $theme-name, $theme-obj in $themes {
+
+		.theme-#{$theme-name} & {
+
+			@each $property, $value-key in $properties {
+
+				#{$property}: map-get($theme-obj, $value-key);
+
+			}
+
+		}
+
+	}
+
+}
+
+/**
+ * Generate custom media breakpoints
+ *
+ * Params: Either $min, $max, or both
+ *
+ * Usage:
+ *   - @include breakpoint(320px, 480px){
+ *         .random {
+ *             color: blue;
+ *         }
+ *     }
+ */
+
+@mixin breakpoint($min: null, $max: null) {
+
+	$query: "";
+
+	@if $min and not $max {
+		$query: append($query, "(min-width: #{$min})");
+	} @else if $max and not $min {
+		$query: append($query, "(max-width: #{$max})");
+	} @else if $min and $max {
+		$query: append($query, "(min-width: #{$min}) and (max-width: #{$max})");
+	}
+	
+	@media screen and #{$query} { @content; }
+
+}
+
+/**
+ * UA prefixed box shadows
+ *
+ * Usage:
+ *
+ *   - @include box-shadow(0px 0px 20px 0px rgba(0,0,0,0.2));
+ */
+
+@mixin box-shadow($shadow) {
+
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+
+}
+
+/**
+ * UA prefixed transform rotate
+ *
+ * Usage:
+ *
+ *   - @include rotate(180);
+ */
+
+@mixin rotate($deg) {
+
+	-webkit-transform: rotate(#{$deg}deg);
+	-moz-transform: rotate(#{$deg}deg);
+	-ms-transform: rotate(#{$deg}deg);
+	-o-transform: rotate(#{$deg}deg);
+	transform: rotate(#{$deg}deg);
+
+}
+
+/**
+ * UA prefixed background-clip
+ *
+ * Usage:
+ *
+ *   - @include background-clip(padding-box);
+ */
+
+@mixin background-clip($value) {
+
+	@if $value == "padding-box" {
+
+		-webkit-background-clip: padding-box; 
+		-moz-background-clip: padding; 
+		background-clip: padding-box;
+		
+	}
+
+}

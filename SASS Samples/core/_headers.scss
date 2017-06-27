@@ -1,0 +1,14 @@
+/**
+ * Generic headers e.g. H1
+ */
+
+.header-logo {
+	text-align: center;
+	@include rem(padding-top, 38px);
+	margin: 0 auto;
+	
+	.logo {
+		display: inline-block;
+	}
+
+}

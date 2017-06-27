@@ -1,0 +1,21 @@
+/**
+ * Editable <theme name> colour options
+ */
+
+$themes: map-merge($themes,(
+	indigo: (
+
+		// Button - primary
+		btn-primary-color: #FFFFFF,
+		btn-primary-bg-color: #4286F3,
+		btn-primary-hover-bg-color: #0F61EA,
+		btn-primary-border-color: #4286F3,
+
+		// Button - secondary
+		btn-secondary-color: #777777,
+		btn-secondary-bg-color: #F8F8F8,
+		btn-secondary-hover-bg-color: #E9E9E9,
+		btn-secondary-border-color: #DEDEDE
+
+	))
+);

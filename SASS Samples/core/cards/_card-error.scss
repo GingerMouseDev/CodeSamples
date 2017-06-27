@@ -1,0 +1,41 @@
+/**
+ * Error card
+ */
+
+.card-error {
+	@include rem(font-size, 16px);
+	width: 100%;
+	@include rem(max-width, 370px);
+	margin: 0 auto;
+	
+	.header {
+		color: #555555;
+		@include rem(font-size, 23px);
+		font-weight: 400;
+		text-align: center;
+		@include rem(padding, 24px 14px 22px 14px);
+	}
+	
+	.wrap {
+		@include rem(padding, 0px 16px 36px 16px);
+	}
+	
+	.errors-list {
+		list-style-type: disc;
+		@include rem(margin-left, 20px);
+		
+		li {
+			@include rem(padding-bottom, 10px);
+		}
+		
+	}
+	
+	.header-error-details {
+		color: #555555;
+		text-align: center;
+		@include rem(font-size, 21px);
+		font-weight: 400;
+		@include rem(padding, 14px 0px 22px 0px);
+	}
+	
+}

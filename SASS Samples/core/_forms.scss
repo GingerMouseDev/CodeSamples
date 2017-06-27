@@ -1,0 +1,20 @@
+/**
+ * Generic forms
+ */
+
+input:not([type="submit"]) {
+	outline: none;
+
+	&:focus {
+		@include box-shadow($input-focus-box-shadow-1);
+	}
+
+}
+
+/**
+ * Angular
+ */
+
+.ng-submitted input.ng-invalid:not([type="submit"]) {
+	@include box-shadow($input-invalid-box-shadow-1);
+}

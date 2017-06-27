@@ -1,0 +1,63 @@
+/**
+ * Body
+ */
+
+$body-bg-color: #EEE;
+
+/**
+ * Font size (initial & base), and line height
+ */
+
+$initial-font-size: 16px;
+$base-font-size: 15px;
+$base-line-height: 1.46;
+
+/**
+ * Config rem mixin within './utils/_mixins.scss
+ */
+
+$rem-fallback: true;
+$rem-px-only: false;
+
+/**
+ * Borders (general)
+ */
+
+$border-color-1: #DEDEDE;
+
+/**
+ * Cards
+ */
+
+$card-box-shadow-1: 0px 0px 15px rgba(50,50,50,0.1);
+
+/**
+ * Forms
+ */
+
+$form-err-color-1: #D62822;
+
+$input-focus-box-shadow-1: 0px 0px 3px rgb(15,97,234);
+$input-invalid-box-shadow-1: 0px 0px 3px rgb(229,50,56);
+
+/**
+ * Spinners
+ */
+
+$spinner-full-pane-color: #FFF;
+$spinner-full-pane-opacity: 0.9;
+$spinner-message-color: #555;
+
+/**
+ * Map merged with theme definitions found within './config/themes/'
+ */
+
+$themes: ();
+
+/**
+ * Breakpoints based on design rather than common device widths
+ */
+
+$breakpoints: (
+	sm: 670px
+);

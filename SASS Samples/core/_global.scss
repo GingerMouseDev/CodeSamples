@@ -1,0 +1,61 @@
+/**
+ * HTML & body
+ */
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	overflow-x: hidden;
+	background-color: $body-bg-color;
+}
+
+/**
+ * Links
+ */
+
+a {
+	color: #4286F3;
+	text-decoration: none;
+	
+	&:hover {
+		color: #0F61EA;
+	}
+
+}
+
+/**
+ * Lists
+ */
+
+ul, ol {
+	list-style: none;
+}
+
+/**
+ * Vertical alignment
+ */
+
+audio,
+canvas,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+/**
+ * Selection
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
